@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="StudentsApp.StudentPage"
+             Title="StudentPage">
+    <StackLayout>
+        <!--<Label Text="Группа" />-->
+        <Picker x:Name="groupPicker" Title="Группа:" SelectedItem="{Binding Group}">
+            <Picker.Items>
+                <x:String>ИСП.20А</x:String>
+                <x:String>ССА.20А</x:String>
+                <x:String>БД.20А</x:String>
+            </Picker.Items>
+        </Picker>
+        <Label Text="ФИО:" Margin="5,5,0,0" />
+        <Entry Text="{Binding FIO}" WidthRequest="250" HeightRequest="30" HorizontalOptions="Start" Margin="0,10"/>
+        <Label Text="Номер телефона:" Margin="5,5,0,0"/>
+        <Entry Text="{Binding NumberPhone}"  WidthRequest="250" HeightRequest="30" HorizontalOptions="Start" Margin="0,10"/>
+        <Label Text="Email:" Margin="5,5,0,0"/>
+        <Entry Text="{Binding Email}"  WidthRequest="250" HeightRequest="30" HorizontalOptions="Start" Margin="0,10"/>
+        <Label Text="Дата рождения:" Margin="5,5,0,0"/>
+        <Entry Text="{Binding DateOfBirthday}" WidthRequest="250" HeightRequest="30" HorizontalOptions="Start" Margin="0,10"/>
+        <StackLayout Orientation="Horizontal">
+            <Button Text="Сохранить" Clicked="SaveStudent"/>
+            <Button Text="Удалить" Clicked="DeleteStudent"/>
+            <Button Text="Отмена" Clicked="Cancel"/>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>
